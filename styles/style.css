@@ -14,7 +14,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   position: relative;
-  height: 100vh;
+  height: min(100vh, 668px);
   align-items: center;
 }
 
@@ -181,7 +181,7 @@
   text-decoration: none;
 }
 
-.content {
+.section {
   display: grid;
   gap: 50px;
   margin-inline-start: var(--main-gap);
@@ -209,7 +209,7 @@
 .footer {
   display: grid;
   position: relative;
-  height: 100vh;
+  height: min(100vh, 668px);
   padding-block-end: 11px;
   padding-inline-start: 4px;
 }
@@ -248,7 +248,7 @@
     margin-block-end: 142px;
   }
   
-  .content {
+  .section {
       gap: 80px;
   }
   
