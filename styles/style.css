@@ -1,5 +1,351 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-image: var(--bg-image);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: grid;
+  gap: 40px;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  position: relative;
+  height: 100vh;
+  align-items: center;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--nav-color);
+  border-block-start: 1px solid var(--nav-color);
+  inset-inline-end: var(--main-gap);
+  inset-block-start: var(--main-gap);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--nav-color);
+  border-block-end: 1px solid var(--nav-color);
+  inset-inline-start: var(--main-gap);
+  inset-block-end: var(--main-gap);
+}
+
+.header-rec {
+  color: var(--accent-color);
+  position: absolute;
+  inset-block-start: var(--main-gap);
+  right: 39px;
+}
+
+.header-rec::before {
+  content: 'REC';
+  font-size: var(--main-font-size, 18px);
+}
+
+.header-rec::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-start: 43px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  margin-inline-end: 11px;
+  font-size: var(--main-font-size, 18px);
+  margin-block-start: 20px;
+  line-height: 36px;
+}
+
+.header__theme-menu-button {
+  line-height: 100%;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-bottom: 6px;
+  text-transform: lowercase;
+  background-color: transparent;
+  border: transparent;
+  color: var(--nav-color);
+  cursor: pointer
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--nav-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid var(--nav-color);
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible::after {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 1px;
+  background-color: var(--nav-color);
+  inset-block-end: -2px;
+  inset-inline-start: 0;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--nav-hover-color);
+}
+
+.header-title {
+  line-height: 83%;
+}
+
+.title__hf {
+  font-weight: 700;
+  font-size: var(--hf-logo-size);
+  color: var(--hf-title);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: center;
+  margin-inline-start: 10px;
+}
+
+.header-subtitle {
+  font-weight: 700;
+  margin-block-end: 26px;
+  inline-size: 355px;
+  margin-inline-start: 10px;
+}
+
+.title-decor {
+  color: var(--main-heading-color);
+  background-color: var(--section-heading-color);
+  font-size: var(--main-font-size, 18px);
+  line-height: var(--main-line-height);
+}
+
+.content-section {
+  font-size: var(--main-font-size, 18px);
+  line-height: var(--main-line-height);
+}
+
+.content-title__section {
+  margin-block-end: 20px;
+  color: var(--title-decor);
+  font-weight: 700;
+  font-size: var(--main-font-size, 18px);
+}
+
+.text-block__title {
+  font-weight: 700;
+}
+
+.text-blocks {
+  display: grid;
+  gap: 20px;
+}
+
+.text-block__content {
+  font-weight: 400;
+  margin-block-start: 10px;
+  color: var(--main-text-color);
+}
+
+.text-block__subtitle {
+  font-weight: 400;
+}
+
+.text-link {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.text-link:focus {
+  outline: 1px solid var(--main-text-color);
+  text-decoration: none;
+}
+
+.content {
+  display: grid;
+  gap: 50px;
+  margin-inline-start: var(--main-gap);
+  margin-inline-end: var(--main-gap);
+}
+
+.picture {
+  display: grid;
+  gap: var(--main-gap);
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__image {
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  padding-block-end: 11px;
+  padding-inline-start: 4px;
+}
+
+.footer-title {
+  margin-block-start: 10px;
+}
+
+@media (width >= 768px) {
+  .page {
+    gap: 60px;
+  }
+
+  .header-rec {
+    right: 48px;
+  }
+ 
+  .header__theme-menu {
+    margin-inline-end: 21px;
+    margin-block-start: 136px;
+  }
+  
+  .header-title {
+    margin: 0px;
+  }
+
+  .title__hf {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin: 0;
+  }
+  
+  .header-subtitle {
+    justify-self: end;
+    inline-size: 364px;
+    margin-inline-end: 20px;
+    margin-block-end: 142px;
+  }
+  
+  .content {
+      gap: 80px;
+  }
+  
+  .subtitle {
+    font-size: var(--main-font-size, 18px);
+    line-height: var(--main-line-height);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+  
+  .decision {
+    font-size: var(--main-font-size, 18px);
+    line-height: var(--main-line-height);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+  
+  .content-title__section:first-child {
+    max-inline-size: 236px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street"; 
+  }
+  
+  .gallery__image:nth-child(1) {
+    grid-area: sunset;
+  }
+  
+  .gallery__image:nth-child(2) {
+    grid-area: ice-cream;
+  }
+  
+  .gallery__image:nth-child(3) {
+    grid-area: tape;
+  }
+  
+  .gallery__image:nth-child(4) {
+    grid-area: books;
+  }
+  
+  .gallery__image:nth-child(5) {
+    grid-area: street;
+  }
+  
+  .footer-title {
+    justify-self: center;
+  }
+
+  .footer {
+    padding: 0;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-inline-end: 0;
+    margin-block-start: 13px;
+  }
+
+  .header__theme-menu-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .header-subtitle {
+    inline-size: 491px;
+    margin-block-end: 84px;
+  }
+
+  .content-section {
+    column-gap: 10px;
+  }
+
+  .content-title__section:first-child {
+    max-inline-size: 303px;
+  }
+
+  .causes-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footer-title {
+    justify-self: anchor-center;
+  }
+
 }
