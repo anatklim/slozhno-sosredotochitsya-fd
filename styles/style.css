@@ -279,7 +279,7 @@
     grid-template-areas:
       "sunset sunset ice-cream"
       "tape books ice-cream"
-      "tape street street"; 
+      "tape street street";
   }
   
   .gallery__image:nth-child(1) {

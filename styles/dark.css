@@ -1,9 +1,11 @@
 :root.theme-dark {
   --bg-image: url(../images/cover-image-dark.png);
-  --main-bg-color: #000028;
-  --main-text-color: #F1B2CE;
-  --nav-hover-color: #FF007066;
   --accent-color: #FF0070;
+  --main-bg-color: #000028;
+  --main-heading-color: #000028;
+  --main-text-color: #F1B2CE;
+  --main-font-family: 'IBM Plex mono', monospace;
+  --section-heading-color: #ff0070;
   --nav-color: #FF0070;
   --title-decor: #FF0070;
   --hf-title: #DB00FF;
