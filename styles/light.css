@@ -27,9 +27,11 @@
     --hf-title: #FFC2E6;
     --nav-hover-color: #32312D66;
     --main-heading-color: #353430;
+    --section-heading-color: #FF8DCB;
   }
 
   .header-rec {
     display: none;
-    }
+  }
 }
+

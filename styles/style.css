@@ -14,7 +14,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   position: relative;
-  height: min(100vh, 668px);
+  height: max(100vh, 668px);
   align-items: center;
 }
 
@@ -111,6 +111,7 @@
 
 .header-title {
   line-height: 83%;
+  margin-inline-start: 10px;
 }
 
 .title__hf {
@@ -119,14 +120,14 @@
   color: var(--hf-title);
   text-shadow: 4px 4px 0 var(--accent-color);
   align-self: center;
-  margin-inline-start: 10px;
 }
 
 .header-subtitle {
   font-weight: 700;
   margin-block-end: 26px;
-  inline-size: 355px;
+  max-width: min(100%, 355px);
   margin-inline-start: 10px;
+  margin-inline-end: var(--main-gap);
 }
 
 .title-decor {
@@ -134,6 +135,13 @@
   background-color: var(--section-heading-color);
   font-size: var(--main-font-size, 18px);
   line-height: var(--main-line-height);
+}
+
+.section {
+  display: grid;
+  gap: 50px;
+  margin-inline-start: var(--main-gap);
+  margin-inline-end: var(--main-gap);
 }
 
 .content-section {
@@ -148,13 +156,13 @@
   font-size: var(--main-font-size, 18px);
 }
 
-.text-block__title {
-  font-weight: 700;
-}
-
 .text-blocks {
   display: grid;
   gap: 20px;
+}
+
+.text-block__title {
+  font-weight: 700;
 }
 
 .text-block__content {
@@ -173,19 +181,12 @@
 }
 
 .text-link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--main-text-color);
 }
 
 .text-link:focus {
   outline: 1px solid var(--main-text-color);
   text-decoration: none;
-}
-
-.section {
-  display: grid;
-  gap: 50px;
-  margin-inline-start: var(--main-gap);
-  margin-inline-end: var(--main-gap);
 }
 
 .picture {
@@ -207,11 +208,12 @@
 }
 
 .footer {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  height: min(100vh, 668px);
+  height: max(100vh, 668px);
   padding-block-end: 11px;
-  padding-inline-start: 4px;
 }
 
 .footer-title {
@@ -243,8 +245,7 @@
   
   .header-subtitle {
     justify-self: end;
-    inline-size: 364px;
-    margin-inline-end: 20px;
+    max-width: min(100%, 364px);
     margin-block-end: 142px;
   }
   
@@ -301,13 +302,13 @@
   .gallery__image:nth-child(5) {
     grid-area: street;
   }
-  
-  .footer-title {
-    justify-self: center;
-  }
 
   .footer {
     padding: 0;
+  }
+  
+  .footer-title {
+    justify-self: center;
   }
 }
 
@@ -327,6 +328,7 @@
 
   .header-subtitle {
     inline-size: 491px;
+    max-width: min(100%, 491px);
     margin-block-end: 84px;
   }
 
