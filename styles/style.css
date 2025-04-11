@@ -327,7 +327,6 @@
   }
 
   .header-subtitle {
-    inline-size: 491px;
     max-width: min(100%, 491px);
     margin-block-end: 84px;
   }
